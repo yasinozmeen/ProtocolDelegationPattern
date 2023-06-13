@@ -55,7 +55,6 @@ class SecondView: UIView {
     }
     // MARK: - Action
     @objc func buttonTapped(){
-        print(secondTF.text)
     }
 }
 // MARK: - UI Configure Function With SnapKit
