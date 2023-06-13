@@ -8,13 +8,13 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
     var window: UIWindow?
-
+    // MARK: - UI Scene Caller
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else {return}
         let window = UIWindow(windowScene: windowScene)
-        let FirstVC = FirstVc()
+        let FirstVC = FirstVC()
         let navController = UINavigationController(rootViewController: FirstVC)
         window.rootViewController = navController
         self.window = window

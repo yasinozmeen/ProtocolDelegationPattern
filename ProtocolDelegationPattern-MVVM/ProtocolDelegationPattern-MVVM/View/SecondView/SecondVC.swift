@@ -8,11 +8,15 @@
 import UIKit
 
 class SecondVC: UIViewController {
-
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configureUI()
+    }
     
+    // MARK: - Functions
+    func configureUI() {
+        view = SecondView() as UIView
     }
     
 }

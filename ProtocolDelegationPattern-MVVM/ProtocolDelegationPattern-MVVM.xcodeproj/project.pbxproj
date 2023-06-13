@@ -133,8 +133,8 @@
 		84514CC12A390CF40066172E /* FirstView */ = {
 			isa = PBXGroup;
 			children = (
-				84514CAA2A390B6B0066172E /* FirstVC.swift */,
 				84514CC32A390D170066172E /* FirstView.swift */,
+				84514CAA2A390B6B0066172E /* FirstVC.swift */,
 			);
 			path = FirstView;
 			sourceTree = "<group>";

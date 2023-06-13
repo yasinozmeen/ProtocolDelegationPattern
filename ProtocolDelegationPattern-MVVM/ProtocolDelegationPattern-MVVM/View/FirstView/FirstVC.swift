@@ -7,13 +7,17 @@
 
 import UIKit
 
-class FirstVc: UIViewController {
-
+class FirstVC: UIViewController {
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        configureUI()
     }
-
-
+    
+    // MARK: - Functions
+    func configureUI() {
+        view = FirstView() as UIView
+    }
+    
 }
 
