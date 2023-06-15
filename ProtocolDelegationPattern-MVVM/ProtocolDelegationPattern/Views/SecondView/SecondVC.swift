@@ -7,13 +7,13 @@
 
 import UIKit
 
-protocol ChangeLabelNameProtocol: AnyObject {
+protocol PrepareChangeLabelNameProtocol: AnyObject {
     func getText(text: String?, handler: (()->()))
-    func changeLabel()
+    func prepareChangeLabelText()
 }
 class SecondVC: UIViewController, ButtonTapProtocol {
     // MARK: - Varaibles
-    var changeLAbelDelegate:ChangeLabelProtocol?
+    var changeLAbelDelegate: ChangeLabelTextProtocol?
     var secondView: SecondView?
     var labelText:String = ""
     
@@ -22,7 +22,7 @@ class SecondVC: UIViewController, ButtonTapProtocol {
         super.viewWillAppear(animated)
         configureUI()
         delegateImplemantent()
-        changeLabel()
+        prepareChangeLabelText()
     }
     
     // MARK: - Functions
@@ -31,22 +31,22 @@ class SecondVC: UIViewController, ButtonTapProtocol {
         secondView = SecondView()
         view = secondView
     }
+    
     func delegateImplemantent(){
         secondView?.buttonTapDelegate = self
     }
+    
     func didTapButton(text: String?) {
         navigationController?.popViewController(animated: true)
     }
-    
-    
 }
 
-extension SecondVC: ChangeLabelNameProtocol{
-    func changeLabel() {
-        changeLAbelDelegate = secondView
-        changeLAbelDelegate?.changeLabel(text: labelText)
-    }
+extension SecondVC: PrepareChangeLabelNameProtocol{
     
+    func prepareChangeLabelText() {
+        changeLAbelDelegate = secondView
+        changeLAbelDelegate?.changeLabelText(text: labelText)
+    }
     
     func getText(text: String?, handler: (()->())){
         if let text = text{

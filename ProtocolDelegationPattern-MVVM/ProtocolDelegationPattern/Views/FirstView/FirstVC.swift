@@ -10,9 +10,10 @@ protocol ButtonTapProtocol: AnyObject {
     func didTapButton(text: String?)
 }
 final class FirstVC: UIViewController, ButtonTapProtocol {
+    // MARK: - Properties
     let secondVC = SecondVC()
     var firstView: FirstView?
-    var secondVCDelegate: ChangeLabelNameProtocol?
+    var secondVCDelegate: PrepareChangeLabelNameProtocol?
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -24,7 +25,7 @@ final class FirstVC: UIViewController, ButtonTapProtocol {
     // MARK: - Functions
     private func configureUI() {
         firstView = FirstView()
-        self.view = firstView // view = FirstView() gibi tanimlamak yerine boyle tanimliyoruz ki firstView degiskeni FirstVC gitti zaman gitsin.
+        self.view = firstView
     }
     
     private func delegateImplemantent() {
@@ -33,9 +34,9 @@ final class FirstVC: UIViewController, ButtonTapProtocol {
     }
     
     func didTapButton(text: String?) {
-        secondVCDelegate?.getText(text: text,handler: {
+        secondVCDelegate?.getText(text: text) {
             navigationController?.pushViewController(secondVC, animated: true)
-        })
+        }
     }
 }
 

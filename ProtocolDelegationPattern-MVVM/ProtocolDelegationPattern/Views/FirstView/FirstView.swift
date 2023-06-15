@@ -10,7 +10,6 @@ import SnapKit
 
 final class FirstView: UIView {
     // MARK: - Varaibles
-    private let firstVC = FirstVC()
     weak var buttonTapDelegate: ButtonTapProtocol?
     
     // MARK: - UI Elements
