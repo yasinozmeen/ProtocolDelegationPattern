@@ -8,25 +8,27 @@
 import UIKit.UIView
 import SnapKit
 
-class SecondView: UIView {
+final class FirstView: UIView {
     // MARK: - Varaibles
+    private let firstVC = FirstVC()
+    weak var buttonTapDelegate: ButtonTapProtocol?
     
     // MARK: - UI Elements
-    private let secondLabel: UILabel = {
+    private let firstLabel: UILabel = {
         let label = UILabel()
-        label.text = "........"
+        label.text = "First VC"
         label.textColor = .label
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 48, weight: .bold)
         return label
     }()
-    private let secondTF: UITextField = {
+    private let firstTF: UITextField = {
         let tf = UITextField()
         tf.borderStyle = .roundedRect
-        tf.placeholder = "enter something"
+        tf.placeholder = "enter anything"
         return tf
     }()
-    private let secondButton: UIButton = {
+    private let firstButton: UIButton = {
         let button = UIButton()
         button.setTitle("click for go", for: .normal)
         button.tintColor = .label
@@ -36,6 +38,7 @@ class SecondView: UIView {
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         return button
     }()
+    
     // MARK: - Life Clycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,44 +50,46 @@ class SecondView: UIView {
     }
     
     // MARK: - Function
-    func configure() {
+    private func configure() {
         backgroundColor = .systemGray5
-        setupSecondLabel()
-        setupSecondTf()
-        setupSecondButton()
+        setupFirstLabel()
+        setupFirstTf()
+        setupFirstButton()
     }
+    
     // MARK: - Action
     @objc func buttonTapped(){
-        print(secondTF.text)
+        buttonTapDelegate?.didTapButton(text: firstTF.text)
     }
+    
 }
 // MARK: - UI Configure Function With SnapKit
-extension SecondView {
-    func setupSecondLabel() {
-        addSubview(secondLabel)
+extension FirstView {
+    private func setupFirstLabel() {
+        addSubview(firstLabel)
         
-        secondLabel.snp.makeConstraints { make in
+        firstLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(30)
             make.width.greaterThanOrEqualTo(200)
             make.width.lessThanOrEqualToSuperview().inset(20)
         }
     }
-    func setupSecondTf() {
-        addSubview(secondTF)
+    private func setupFirstTf() {
+        addSubview(firstTF)
         
-        secondTF.snp.makeConstraints { make in
+        firstTF.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(secondLabel.snp.bottom).offset(20)
+            make.top.equalTo(firstLabel.snp.bottom).offset(20)
             make.width.greaterThanOrEqualTo(200)
             make.width.lessThanOrEqualToSuperview().inset(20)
         }
     }
-    func setupSecondButton() {
-        addSubview(secondButton)
-        secondButton.snp.makeConstraints { make in
+    private func setupFirstButton() {
+        addSubview(firstButton)
+        firstButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(secondTF.snp.bottom).offset(20)
+            make.top.equalTo(firstTF.snp.bottom).offset(20)
             make.width.greaterThanOrEqualTo(200)
             make.width.lessThanOrEqualToSuperview().inset(20)
         }
