@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		84514CA32A390B6B0066172E /* ProtocolDelegationPattern-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ProtocolDelegationPattern-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84514CA32A390B6B0066172E /* ProtocolDelegationPattern.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProtocolDelegationPattern.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84514CA62A390B6B0066172E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84514CA82A390B6B0066172E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		84514CAA2A390B6B0066172E /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		84514C9A2A390B6B0066172E = {
 			isa = PBXGroup;
 			children = (
-				84514CA52A390B6B0066172E /* ProtocolDelegationPattern-MVVM */,
+				84514CA52A390B6B0066172E /* ProtocolDelegationPattern */,
 				84514CA42A390B6B0066172E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +54,12 @@
 		84514CA42A390B6B0066172E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				84514CA32A390B6B0066172E /* ProtocolDelegationPattern-MVVM.app */,
+				84514CA32A390B6B0066172E /* ProtocolDelegationPattern.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		84514CA52A390B6B0066172E /* ProtocolDelegationPattern-MVVM */ = {
+		84514CA52A390B6B0066172E /* ProtocolDelegationPattern */ = {
 			isa = PBXGroup;
 			children = (
 				84514CBA2A390C5F0066172E /* App */,
@@ -67,7 +67,7 @@
 				84514CBF2A390C920066172E /* Helpers */,
 				84514CBE2A390C890066172E /* Support */,
 			);
-			path = "ProtocolDelegationPattern-MVVM";
+			path = ProtocolDelegationPattern;
 			sourceTree = "<group>";
 		};
 		84514CBA2A390C5F0066172E /* App */ = {
@@ -126,9 +126,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		84514CA22A390B6B0066172E /* ProtocolDelegationPattern-MVVM */ = {
+		84514CA22A390B6B0066172E /* ProtocolDelegationPattern */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 84514CB72A390B6C0066172E /* Build configuration list for PBXNativeTarget "ProtocolDelegationPattern-MVVM" */;
+			buildConfigurationList = 84514CB72A390B6C0066172E /* Build configuration list for PBXNativeTarget "ProtocolDelegationPattern" */;
 			buildPhases = (
 				84514C9F2A390B6B0066172E /* Sources */,
 				84514CA02A390B6B0066172E /* Frameworks */,
@@ -138,12 +138,12 @@
 			);
 			dependencies = (
 			);
-			name = "ProtocolDelegationPattern-MVVM";
+			name = ProtocolDelegationPattern;
 			packageProductDependencies = (
 				84514CCF2A390D830066172E /* SnapKit */,
 			);
 			productName = "ProtocolDelegationPattern-MVVM";
-			productReference = 84514CA32A390B6B0066172E /* ProtocolDelegationPattern-MVVM.app */;
+			productReference = 84514CA32A390B6B0066172E /* ProtocolDelegationPattern.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -161,7 +161,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 84514C9E2A390B6B0066172E /* Build configuration list for PBXProject "ProtocolDelegationPattern-MVVM" */;
+			buildConfigurationList = 84514C9E2A390B6B0066172E /* Build configuration list for PBXProject "ProtocolDelegationPattern" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -177,7 +177,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				84514CA22A390B6B0066172E /* ProtocolDelegationPattern-MVVM */,
+				84514CA22A390B6B0066172E /* ProtocolDelegationPattern */,
 			);
 		};
 /* End PBXProject section */
@@ -345,7 +345,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q6XS9G2H7P;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "ProtocolDelegationPattern-MVVM/Helpers/Info.plist";
+				INFOPLIST_FILE = ProtocolDelegationPattern/Helpers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -372,7 +372,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q6XS9G2H7P;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "ProtocolDelegationPattern-MVVM/Helpers/Info.plist";
+				INFOPLIST_FILE = ProtocolDelegationPattern/Helpers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -393,7 +393,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		84514C9E2A390B6B0066172E /* Build configuration list for PBXProject "ProtocolDelegationPattern-MVVM" */ = {
+		84514C9E2A390B6B0066172E /* Build configuration list for PBXProject "ProtocolDelegationPattern" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				84514CB52A390B6C0066172E /* Debug */,
@@ -402,7 +402,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		84514CB72A390B6C0066172E /* Build configuration list for PBXNativeTarget "ProtocolDelegationPattern-MVVM" */ = {
+		84514CB72A390B6C0066172E /* Build configuration list for PBXNativeTarget "ProtocolDelegationPattern" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				84514CB82A390B6C0066172E /* Debug */,

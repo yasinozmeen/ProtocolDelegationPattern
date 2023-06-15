@@ -8,10 +8,10 @@
 import UIKit.UIView
 import SnapKit
 
-protocol ChangeLabelProtocol:AnyObject {
-    func changeLabel(text:String)
+protocol ChangeLabelTextProtocol:AnyObject {
+    func changeLabelText(text:String)
 }
-class SecondView: UIView,ChangeLabelProtocol {
+class SecondView: UIView,ChangeLabelTextProtocol {
     let secondVC = SecondVC()
     weak var buttonTapDelegate: ButtonTapProtocol?
     
@@ -39,7 +39,6 @@ class SecondView: UIView,ChangeLabelProtocol {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
-        secondVC.changeLAbelDelegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -56,11 +55,9 @@ class SecondView: UIView,ChangeLabelProtocol {
     @objc func buttonTapped(){
         buttonTapDelegate?.didTapButton(text: nil)
     }
-    func changeLabel(text: String) {
+    func changeLabelText(text: String) {
         secondLabel.text = text
     }
-    
-    
 }
 // MARK: - UI Configure Function With SnapKit
 extension SecondView {
