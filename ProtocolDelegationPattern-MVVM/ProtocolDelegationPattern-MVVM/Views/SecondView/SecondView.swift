@@ -8,27 +8,25 @@
 import UIKit.UIView
 import SnapKit
 
-class FirstView: UIView {
-    // MARK: - Varaibles
+protocol ChangeLabelProtocol:AnyObject {
+    func changeLabel(text:String)
+}
+class SecondView: UIView,ChangeLabelProtocol {
+    let secondVC = SecondVC()
+    weak var buttonTapDelegate: ButtonTapProtocol?
     
     // MARK: - UI Elements
-    private let firstLabel: UILabel = {
+    private var secondLabel: UILabel = {
         let label = UILabel()
-        label.text = "........"
+        label.text = "....."
         label.textColor = .label
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 48, weight: .bold)
         return label
     }()
-    private let firstTF: UITextField = {
-        let tf = UITextField()
-        tf.borderStyle = .roundedRect
-        tf.placeholder = "enter something"
-        return tf
-    }()
-    private let firstButton: UIButton = {
+    private let secondButton: UIButton = {
         let button = UIButton()
-        button.setTitle("click for go", for: .normal)
+        button.setTitle("click for back", for: .normal)
         button.tintColor = .label
         button.backgroundColor = .blue
         button.layer.cornerRadius = 5
@@ -36,10 +34,12 @@ class FirstView: UIView {
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         return button
     }()
+    
     // MARK: - Life Clycle
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
+        secondVC.changeLAbelDelegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -49,41 +49,36 @@ class FirstView: UIView {
     // MARK: - Function
     func configure() {
         backgroundColor = .systemGray5
-        setupFirstLabel()
-        setupFirstTf()
-        setupFirstButton()
+        setupSecondLabel()
+        setupSecondButton()
     }
     // MARK: - Action
     @objc func buttonTapped(){
+        buttonTapDelegate?.didTapButton(text: nil)
     }
+    func changeLabel(text: String) {
+        secondLabel.text = text
+    }
+    
+    
 }
 // MARK: - UI Configure Function With SnapKit
-extension FirstView {
-    func setupFirstLabel() {
-        addSubview(firstLabel)
+extension SecondView {
+    func setupSecondLabel() {
+        addSubview(secondLabel)
         
-        firstLabel.snp.makeConstraints { make in
+        secondLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(30)
             make.width.greaterThanOrEqualTo(200)
             make.width.lessThanOrEqualToSuperview().inset(20)
         }
     }
-    func setupFirstTf() {
-        addSubview(firstTF)
-        
-        firstTF.snp.makeConstraints { make in
+    func setupSecondButton() {
+        addSubview(secondButton)
+        secondButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(firstLabel.snp.bottom).offset(20)
-            make.width.greaterThanOrEqualTo(200)
-            make.width.lessThanOrEqualToSuperview().inset(20)
-        }
-    }
-    func setupFirstButton() {
-        addSubview(firstButton)
-        firstButton.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(firstTF.snp.bottom).offset(20)
+            make.top.equalTo(secondLabel.snp.bottom).offset(20)
             make.width.greaterThanOrEqualTo(200)
             make.width.lessThanOrEqualToSuperview().inset(20)
         }
