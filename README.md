@@ -1,2 +1,2 @@
 # ProtocolDelegationPattern
-### This repo was created for this article describing the delegation pattern
+### [This repo was created for this article describing the delegation pattern](https://yasinozmeen.medium.com/6-ayda-mid-olmak-i%CC%87steyen-jr-lar-i%C3%A7in-swift-delegation-pattern-e890f8fba6d6)
